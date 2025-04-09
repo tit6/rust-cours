@@ -1,0 +1,21 @@
+fn main() {
+    let mut nb1 : u128 = 0;
+    let mut nb2 : u128 = 1;
+    let max : u128 = u64::MAX as u128;
+    loop {
+        let fiba : u128 = suivant(nb1, nb2);
+        
+        if fiba >= max {
+            println!("arriver en bout des entier de 64 byte");
+            break;
+        }else{
+            println!("{}", fiba);
+            nb1 = nb2;
+            nb2 = fiba;
+        }
+    }
+}
+
+fn suivant(nb1 : u128, nb2 : u128) -> u128 {
+    return nb1 + nb2 ;
+}
